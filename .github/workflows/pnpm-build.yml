@@ -2,7 +2,6 @@ name: pnpm build
 on:
   pull_request:
     types: [opened]
-  push:
 
 jobs:
   run:
