@@ -1,9 +1,9 @@
-import { global_config } from "@/global-config";
+import { globalConfig } from "@/global-config";
 import type { Metadata } from "next";
 import "@/app/globals.css";
 
 export const metadata: Metadata = {
-  title: `${global_config.title_prefix}`,
+  title: `${globalConfig.titlePrefix}`,
 };
 
 export default function RootLayout({
