@@ -12,6 +12,7 @@ async function auth(token: string): Promise<boolean> {
     const tokenFile = await readFileAsync(tokenPath, "utf-8");
     return tokenFile === token;
   } catch (err) {
+    console.error(err);
     return false;
   }
 }
