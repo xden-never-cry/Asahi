@@ -6,7 +6,8 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "asahi-token": "ts-node ./src/scripts/token.ts"
   },
   "dependencies": {
     "next": "15.1.3",
