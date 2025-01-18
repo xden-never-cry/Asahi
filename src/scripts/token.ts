@@ -32,7 +32,8 @@ function printToken() {
     const token = fs.readFileSync(tokenFilePath, 'utf8');
     console.log(`已经存在token: ${token}`);
   } catch (err) {
-    console.error('没有找到可用的token，请使用 -g 选项生成新的token');
+    console.error(`没有找到可用的token，请使用 -g 选项生成新的token`);
+    console.error(err);
   }
 }
 
