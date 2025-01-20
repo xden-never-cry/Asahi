@@ -1,4 +1,4 @@
-import "server-only";
+'use server'
 import fs from "fs";
 import path from "path";
 import { homedir } from "os";
@@ -6,7 +6,7 @@ import { promisify } from "util";
 
 const readFileAsync = promisify(fs.readFile);
 
-async function auth(token: string): Promise<boolean> {
+export async function auth(token: string): Promise<boolean> {
   const tokenPath = path.join(homedir(), ".asahi", ".token");
   try {
     const tokenFile = await readFileAsync(tokenPath, "utf-8");

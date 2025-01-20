@@ -1,19 +1,24 @@
 "use client";
 
-import React, { useState } from 'react';
+import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { auth } from "@/actions/auth";
+
 
 export default function Login() {
   const [token, setToken] = useState('');
   const router = useRouter();
 
   const handleLogin = async () => {
-    if (token.trim()!== '') {
-      try {
+    try {
+      const isValid = await auth(token);
+      if (isValid) {
         router.push('/');
-      } catch (error) {
-        console.error('登录出错', error);
+      } else {
+        console.error('token不正确');
       }
+    } catch (error) {
+      console.error('Error occurred during login:', error);
     }
   };
 
