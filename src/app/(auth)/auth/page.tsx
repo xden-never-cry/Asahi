@@ -45,8 +45,8 @@ export default function Auth() {
           className="w-full border border-gray-300 rounded-lg p-2 pl-2 pr-8 focus:outline-none focus:ring focus:ring-blue-300"
           placeholder=""
         />
-
-        {errorMessage && <div className="text-red-400 text-sm mt-2">{errorMessage}</div> && false}  // TODO:后续修改，错误提示
+        {/*TODO:后续修改，错误提示*/}
+        {errorMessage && <div className="text-red-400 text-sm mt-2">{errorMessage}</div> && false}
 
         <button
           onClick={handleLogin}
