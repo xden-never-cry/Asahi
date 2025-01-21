@@ -9,10 +9,8 @@ export const config = {
 
 export function middleware(request: NextRequest) {
   const isAuth = 0 ; // 登陆状态
-  if (!isAuth) {
-    if (!request.nextUrl.pathname.startsWith('/auth/login')) {
-      return NextResponse.redirect(new URL('/auth/login', request.url))
-    }
+  if (request.nextUrl.pathname !== '/auth' && !isAuth) {
+    return NextResponse.redirect(new URL('/auth', request.url))
   }
   return NextResponse.next()
 }
