@@ -3,13 +3,13 @@ import type { NextRequest } from 'next/server'
 
 export const config = {
   matcher: [
-    '/((?!api|_next/static|_next/image|favicon.ico|sitemap.xml|robots.txt).*)',
+    '/((?!api|_next/static|_next/image|favicon.ico|sitemap.xml|robots.txt|auth).*)',
   ],
 }
 
 export function middleware(request: NextRequest) {
-  const isAuth = 0 ; // 登陆状态
-  if (request.nextUrl.pathname !== '/auth' && !isAuth) {
+  const isAuth = false; // 登陆状态
+  if (!isAuth) {
     return NextResponse.redirect(new URL('/auth', request.url))
   }
   return NextResponse.next()
