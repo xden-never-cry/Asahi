@@ -28,12 +28,11 @@ function generateToken() {
 
 //读取并打印已有的token
 function printToken() {
-  try {
+  if (fs.existsSync(tokenFilePath)) {
     const token = fs.readFileSync(tokenFilePath, 'utf8');
     console.log(`已经存在token: ${token}`);
-  } catch (err) {
+  } else {
     console.error(`没有找到可用的token，请使用 -g 选项生成新的token`);
-    console.error(err);
   }
 }
 
