@@ -16,5 +16,3 @@ export async function auth(token: string): Promise<boolean> {
     return false;
   }
 }
-
-
